@@ -1,0 +1,181 @@
+html { font-size: 62.5%; } 
+body { @include rem(font-size,1.6); } /* =14px */
+h1   { @include rem(font-size,4.2); } /* =24px */
+h2   { @include rem(font-size,2.8); }
+h3   { @include rem(font-size,2.2); }
+
+%doc {
+	margin:0 auto;
+	text-align:left;
+}
+
+html,body {
+	margin:0;
+	height:100%;
+}
+
+body {
+	text-align:center;
+}
+
+h1,h2,h3 {
+	@include rem(padding-bottom,0.6);
+}
+h1 {
+	text-align:left;
+	margin:0;
+	position:relative;
+	span {
+		@include rem(font-size,1.2);
+		@include rem(margin-left,0.6);
+	}
+}
+h2,h3 {
+	text-align:center;
+}
+
+code {
+	display:block; 
+}
+
+nav {
+	ul {
+		margin-left:0;
+		padding-left:0;
+	}
+}
+
+.wrapper {
+	margin:0 auto;
+	width:96%;
+	min-height:100%;
+	@include outer-container;
+	text-align:center;
+}
+
+.page-body {
+	@include rem(padding-left,4.2);
+	@include rem(padding-right,4.2);
+	div {
+		@include rem(margin-bottom,2.2);
+		&:first-of-type {
+			border-color:transparent;
+		}
+		h4 {
+			@include rem(margin-top,4.2);
+		}
+	}	
+	p {
+		margin:0 auto;
+	}
+	a {
+		font-style:italic;
+		&:hover { color:$primary }
+	}
+}
+
+.legal {
+	@include rem(font-size,1.2);
+	@include media($mobile) {
+		@include rem(font-size,0.8);
+	}
+}
+
+.getting-started {
+	i {
+		@include rem(font-size,1.6);
+	}
+}
+
+.content {
+	background:transparent;
+	/*@include rem(padding-top,7);*/
+}
+
+section {
+	&.break-list {
+		h3 {
+			margin-bottom:0;
+		}		
+		div {
+			border-top:1px solid $borderColor;
+		}
+	}
+	&.doc {
+		@extend %doc;
+		margin-bottom:12px;
+	}
+	&.split {
+		.outer-container div {
+			@include span-columns(6);
+			@include omega(2n);
+			@include media($mobile) {
+				@include span-columns(4);
+			}
+		}
+	}
+}
+
+.left {
+	text-align:left;
+}
+
+.outer-container {
+	@include outer-container;
+	@include media($mobile) {
+		padding:0;
+	}
+}
+
+header {
+	margin:0;
+	h1 {
+		margin-top:0;
+		@include rem(padding-top,1.4);
+		@include span-columns(6);
+		font-weight:bold;
+		text-shadow:2px 2px 0 darken($primary,10%);
+	}
+	nav {
+		@include span-columns(6);
+		ul {
+			@include outer-container;
+			text-align:right;
+		}
+			li {
+				float:right;
+				@include rem(padding-left,0.6);
+				@include rem(padding-right,0.6);
+			}
+	}
+	h2 {
+		text-align:center;
+	}
+	p {
+		@extend %doc;
+	}
+	@include media(new-breakpoint(max-width 668px 12)) {
+		h1 {
+			@include span-columns(12);
+			text-align:center;
+		}
+		nav {
+			@include span-columns(12);
+			ul {
+				text-align:center;
+			}
+			li {
+				float:none;
+				padding:0;
+				@include rem(margin-bottom,1);
+				&:last-of-type {
+					@include rem(margin-bottom,0);
+				}
+			}
+		}
+	}
+}
+
+footer {
+	@include rem(padding-top,1);
+}

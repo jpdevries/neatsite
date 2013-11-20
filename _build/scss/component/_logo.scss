@@ -1,0 +1,18 @@
+%logo {
+	display:block;
+	@include box-sizing(border-box);
+	padding-top:130px;
+	@include retina-image('../img/logos',140px 1050px);
+	@include rem(margin-bottom,2);
+	@include transition (all 420ms ease-in-out);
+	&:hover {
+		border-color:lighten($primary,20%);
+		color:lighten($primary,20%);
+	}
+	&.none {
+		&:hover {
+			border-color:$lightBorderColor;
+			color:inherit;
+		}
+	}
+}

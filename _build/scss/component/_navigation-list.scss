@@ -1,0 +1,14 @@
+/* Instead of writing the same code for every nav bar */
+%navigation-list {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  li {
+    display: block;
+    float: left;
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}

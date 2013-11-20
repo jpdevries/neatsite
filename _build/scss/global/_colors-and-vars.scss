@@ -1,0 +1,8 @@
+$bodyColor:#7d8287; 
+$primary:#21546f;
+$highlight:#f8c4f1;
+$borderColor:#cbced2;
+$lightBorderColor:lighten($borderColor,4%);
+$white:rgb(253,253,253);
+
+$mobile: new-breakpoint(max-width 480px 4);

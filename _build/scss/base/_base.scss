@@ -1,0 +1,176 @@
+@import "fonts";
+
+body {
+	color:$bodyColor;
+	background:gainsboro url('../img/old_mathematics.png');
+	font-family:'Fira Sans',sans-serif;
+}
+
+section {
+	@extend %page;
+	&.intro {
+		border-top:none;
+	}
+}
+
+h1 {
+	font-weight:bold;
+}
+
+ul {
+	padding:0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color:$primary;
+	font-family:'Fira Sans',sans-serif;
+}
+
+h1,h2,h3 {
+	border-bottom:1px solid $highlight;
+}
+
+code, kbd, pre, samp {
+	font-family:'Fira Mono', monospace, serif;
+}
+
+a ,a:visited {
+	color:inherit;
+	
+}
+
+i {
+	a {
+		&:hover {
+			text-decoration:underline;
+		}
+	}
+}
+
+.browser {
+	@extend %browser;
+}
+
+#mast-head {
+	background:$primary; 
+	box-shadow: 0 0 0 3px lighten($primary,20%), 0 0 0 6px ghostwhite, 0px 5px 6px 2px rgb(190,190,190);  
+	color:ghostwhite;
+	h1,h2,h3 {
+		color:inherit;
+		border-bottom:none;
+	}
+	nav {
+		
+	}
+		a {
+			display:block;
+			border-radius:4px;
+			padding:8px 16px;
+			@include linear-gradient(rgba(ghostwhite,0.5),rgba(ghostwhite,0));
+			box-shadow:inset 0px 1px rgba(255, 255, 255, 0.55);
+			color:$primary;
+			text-shadow:-1px 1px 1px lighten($primary,50%);
+			border:1px solid $primary;
+			@include transition (all 360ms ease-in);
+			&:hover {
+				@include linear-gradient(rgba(ghostwhite,0.6),rgba(ghostwhite,0));
+			}
+		}
+}
+
+.intro {
+	background:rgba(#a1cae1,0.18);
+	border-left:none;
+	border-right:none;
+	color:darken($bodyColor,10%);
+	/*max-height:500px;*/
+	/*@include rem(margin-bottom,-4);*/
+	h1,h2,h3 {
+		border-bottom:none;
+	}
+	h2 {
+		@include rem(margin-bottom,1);
+		@include rem(font-size,4.2);
+		text-shadow: -1px -1px 0 $white;
+		@include media($mobile) {
+			@include rem(font-size,2.6);
+		}
+	}
+	p {
+		text-align:center;
+		max-width:em(600);
+		@include rem(font-size,2);
+	}
+}
+
+.browser {
+	@include rem(margin-bottom,-4);
+}
+
+.content {
+	@include rem(margin-top,4);
+}
+
+a {
+	text-decoration:none;
+	&:visited {
+		color:inherit;
+	}
+}
+
+.nav-list {
+	text-align:center;
+	li {
+		display:inline-block;
+		@include rem(padding-left,1.4);
+		@include rem(padding-right,1.4); 
+		@include media($mobile) {
+			padding:0;
+		}
+	}
+}
+
+.logo {
+	@extend %logo;
+	width:160px;
+	height:160px;
+	border:2px dashed $lightBorderColor;
+	border-radius:12px;
+	background-repeat:no-repeat;
+	&.blank {
+		background:none;
+	}
+	&.sass {
+		background-position:center 20px;
+	}
+	&.bootstrap {
+		background-position:center -150px;
+	}
+	&.grunt {
+		background-position:center -300px;
+	}
+	&.html5 {
+		background-position:center -450px;
+	}
+	&.less {
+		background-position:center -600px;
+	}
+	&.foundation {
+		background-position:center -750px;
+	}
+	&.ionicons {
+		background-position:center -932px;
+	}
+	&.font-awesome {
+		background:none;
+		@extend %pseudo-font;
+		&:before {
+			content:$fa-var-flag;
+			font-size:72px;
+			position:absolute;
+			top:30px;
+			left:0;
+			right:0;
+		}
+	}
+}

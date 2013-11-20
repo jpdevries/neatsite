@@ -1,0 +1,32 @@
+%browser {
+	margin-top:24px;
+	@include rem(font-size,1.4);
+	.browser-wrapper {
+		border-image: url(../img/browser-frame.png) 23 10 0 62 repeat;
+		border-radius: 6px 6px 0px 0px;
+		border-style: solid;
+		border-width: 23px 10px 0px 62px;
+	}
+	.browser-wrapper,.browser-container {
+		max-width: 960px;
+		margin: 0 auto;
+	}
+		.browser-container {
+			background:rgba(lighten($lightBorderColor,6%),0.86);
+			border:1px solid rgba(lighten($primary,40%),0.68);
+			border-top:none;
+			box-shadow:0 0 3px rgba(0, 0, 0, 0.3);
+		}
+			.browser-code {
+				text-align:left;
+				color:desaturate(lighten($primary,20%),40%);
+				pre {
+					margin:0;
+					padding:1em 1em 0 1em;
+				}
+					.row {
+						/*color:lighten($primary,20%);*/
+						color:darken($highlight,16%);
+					}
+			} 
+}

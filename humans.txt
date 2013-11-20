@@ -1,0 +1,7 @@
+/* TEAM */
+	Developer: JP DeVries
+	Contact:   mail@devries.jp
+	URI:       http://devries.jp
+
+/* SITE */
+	Created:  2013-10-27

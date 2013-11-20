@@ -1,0 +1,4 @@
+@mixin rem($property:font-size,$size:1.4) {
+	#{$property}:$size * 10px;
+	#{$property}:#{$size}rem;
+}
